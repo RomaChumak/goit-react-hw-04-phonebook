@@ -4,7 +4,6 @@ import { Filter } from "./filter/Filter";
 import { ContactList } from "./contactList/ContactList";
 import { Layout } from "./Layout.styled";
 import { nanoid } from "nanoid";
-import { array } from "yup";
 export const App = () => {
 const array  = [
     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
