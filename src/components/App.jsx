@@ -40,9 +40,7 @@ const array  = [
     );
 
     if (!oldContact) {
-      setContacts(prevContacts => ({
-        contacts: [...prevContacts, { id: nanoid(), ...newContact }],
-      }));
+      setContacts(prevContacts =>  [...prevContacts, { id: nanoid(), ...newContact }], );
     } else {
       alert(`${newContact.name} is already in contacts.`);
     }
