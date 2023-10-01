@@ -24,23 +24,22 @@ const array  = [
         setFilter(contactName)
    }
     function deleteContact(contactId) {
-        setContacts(prevContacts => ({
-            contacts: prevContacts.filter(contact => contact.id !== contactId)
-        }));
+        setContacts(prevContacts =>  prevContacts.filter(contact => contact.id !== contactId));
     }
-  function  visibleContacts () {
+  const visibleContacts = () => {
     return contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
     );
-
-    }
+  };
     function addContact(newContact){
     const oldContact = contacts.some(
       contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
     );
 
     if (!oldContact) {
-      setContacts(prevContacts =>  [...prevContacts, { id: nanoid(), ...newContact }], );
+      setContacts(prevContacts => 
+        [...prevContacts, { id: nanoid(), ...newContact }],
+      );
     } else {
       alert(`${newContact.name} is already in contacts.`);
     }
